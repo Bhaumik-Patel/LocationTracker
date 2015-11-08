@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script data-require="angular.js@1.4.7" data-semver="1.4.7" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body ng-app="myApp">
+<div ng-controller="AppCtrl">
+  	<h1>Location Tracker Application</h1>
+  	<button type="button" ng-click="GetLocation()">Where Am I?</button>
+  	<br><br>
+  	<div>{{ error }}</div>
+    <table ng-show="location">
+  <th colspan="2">Location Details</th>
+  <tr>
+    <td>IP Address</td>
+    <td>{{ location.ip }}</td>
+  </tr>
+  <tr>
+    <td>City</td>
+    <td>{{ location.city }}</td>
+  </tr>
+  <tr>
+    <td>Region</td>
+    <td>{{ location.region }}</td>
+  </tr>
+  <tr>
+    <td>Postal Code</td>
+    <td>{{ location.postal_code }}</td>
+  </tr>
+  <tr>
+    <td>Country</td>
+    <td>{{ location.country }}</td>
+  </tr>
+  <tr>
+     <td>Country Code</td>
+    <td>{{ location.country_code }}</td>
+  </tr>
+  <tr>
+     <td>Continent Code</td>
+    <td>{{ location.continent_code }}</td>
+  </tr>
+	<tr>
+     <td>Latitude</td>
+    <td>{{ location.latitude }}</td>
+  </tr>
+  <tr>
+     <td>Longitude</td>
+    <td>{{ location.longitude }}</td>
+  </tr>
+ <tr>
+     <td>Timezone</td>
+    <td>{{ location.timezone }}</td>
+  </tr>
+</table>
+</div>
+<script src="controllers/controller.js"></script>
+</body>
+
+</html>

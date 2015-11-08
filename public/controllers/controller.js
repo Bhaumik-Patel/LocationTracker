@@ -8,7 +8,7 @@ var AppCtrl = function($scope, $http){
 	})
        .error(function(reason)
        {
-       		$scope.error = "Could not fetch the data.";
+       		$scope.error = "Could not fetch the data. Please try again later.";
        });
     };
 };

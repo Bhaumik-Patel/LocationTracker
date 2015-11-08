@@ -18,7 +18,7 @@ app.get('/location', function(req, res){
  
 // then satelize call  
  
-satelize.satelize({}, function(err, geoData) {
+satelize.satelize({ip:'162.243.230.213'}, function(err, geoData) {
   // process err 
   
   // if data is JSON, we may wrap it in js object 

@@ -33,8 +33,17 @@ app.get('/location', function(req, res){
 // };
  
 // then satelize call  
+
+var get_ip = require('ipware')().get_ip;
+app.use(function(req, res, next) {
+var ip_info = get_ip(req);
+console.log(ip_info);
+// { clientip: '127.0.0.1', clientipRoutable: false }
+next();
+});
+
  
-satelize.satelize(ip, function(err, geoData) {
+satelize.satelize(get_ip, function(err, geoData) {
   // process err 
   
   // if data is JSON, we may wrap it in js object 

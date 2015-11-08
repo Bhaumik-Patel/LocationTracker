@@ -12,7 +12,7 @@
   	<button type="button" ng-click="GetLocation()">Where Am I?</button>
   	<br><br>
   	<div>{{ error }}</div>
-    <table ng-show="location">
+    <table ng-hide="!location">
   <th colspan="2">Location Details</th>
   <tr>
     <td>City</td>

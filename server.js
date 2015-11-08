@@ -4,7 +4,7 @@ var app = express();
 app.use(express.static(__dirname + "/public"))
 
 app.listen(1337);
-//console.log("server is running");
+console.log("server is running");
 
 app.get('/location', function(req, res){
 

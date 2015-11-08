@@ -5,6 +5,7 @@ var AppCtrl = function($scope, $http){
        $http.get('/location').success(function(response){
 		console.log('Got response');
 		$scope.location = response;
+
 	})
        .error(function(reason)
        {
@@ -14,3 +15,4 @@ var AppCtrl = function($scope, $http){
 };
 
 myApp.controller('AppCtrl', AppCtrl);
+

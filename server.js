@@ -2,9 +2,14 @@ var express = require('express');
 var app = express();
 
 app.use(express.static(__dirname + "/public"))
+
+//app.listen(1337, "127.0.0.1");
+app.listen(1337, "162.243.230.213");
+console.log("server running");
+
 app.get('/location', function(req, res){
 
-	console.log('Get Request')
+	console.log('Get Request for ' + req.connection.remoteAddress);
 
 	var satelize = require('satelize');
  
@@ -29,8 +34,6 @@ satelize.satelize(ip, function(err, geoData) {
 });
 
 
-app.listen(1337, "162.243.230.213");
-console.log("server running");
 
 // /************************************************
 // FILENAME

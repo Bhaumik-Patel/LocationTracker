@@ -9,7 +9,7 @@ app.get('/location', function(req, res){
 	var satelize = require('satelize');
  
 // Example retrieve IP from request 
- var ip = req.connection.remoteAddress; 
+ var ip = req.header('x-forwarded-for'); 
  
 // then satelize call  
  

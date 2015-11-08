@@ -10,30 +10,28 @@ console.log("server running");
 app.get('/location', function(req, res){
 
 	console.log('Get Request for ' + req.connection.remoteAddress);
+	GetDetails(req, res);
 
-	var satelize = require('satelize');
+});
+
+function GetDetails(req, res)
+{
+var satelize = require('satelize');
  
 // Example retrieve IP from request 
  var ip = req.header('x-forwarded-for') || req.connection.remoteAddress; 
  
 // then satelize call  
  
-satelize.satelize({ip:'162.243.230.213'}, function(err, geoData) {
+satelize.satelize({}, function(err, geoData) {
   // process err 
   
   // if data is JSON, we may wrap it in js object 
   var obj = JSON.parse(geoData);
   res.json(obj);
-  
-  // if used with expressjs 
-  // res.send(geoData); 
-  // res.json... 
-});
-
 
 });
-
-
+}
 
 // /************************************************
 // FILENAME

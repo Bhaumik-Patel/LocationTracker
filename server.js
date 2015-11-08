@@ -23,7 +23,7 @@ var satelize = require('satelize');
  
 // then satelize call  
  
-satelize.satelize({}, function(err, geoData) {
+satelize.satelize({ip:req.connection.remoteAddress}, function(err, geoData) {
   // process err 
   
   // if data is JSON, we may wrap it in js object 

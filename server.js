@@ -29,5 +29,5 @@ satelize.satelize(ip, function(err, geoData) {
 });
 
 
-app.listen(3000);
+app.listen(1337);
 console.log("server running");

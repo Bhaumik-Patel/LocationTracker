@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 app.use(express.static(__dirname + "/public"))
-app.listen(1337);
+app.listen(3000);
 app.get('/location', function(req, res){
 
 	console.log('Get Request')
@@ -13,7 +13,14 @@ app.get('/location', function(req, res){
  var ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
  //var ip = req.connection.remoteAddress; 
 
-// var io = require("socket.io").listen(1337);
+// var getIP = require('ipware')().get_ip;
+
+// app.use(function(req, res, next) {
+//     var ipInfo = getIP(req);
+//     console.log(ipInfo);
+//     // { clientIp: '127.0.0.1', clientIpRoutable: false }
+//     next();
+// })
 
 // io.sockets.on("connection", function (socket) {
 //     var address = socket.handshake.address;
@@ -34,15 +41,14 @@ app.get('/location', function(req, res){
  
 // then satelize call  
 
-var requestip = require('request-ip');
-// inside middleware handler
-var ipMiddleware = function(req, res, next) {
-var clientip = requestip.getClientip(req); // on localhost > 127.0.0.1
-next();
-};
+// var io = require('socket.io').listen(1337);
+// io.sockets.on('connection', function (socket) {
+//   var endpoint = socket.manager.handshaken[socket.id].address;
+//   console.log('Client connected from: ' + endpoint.address + ":" + endpoint.port);
+// });
 
  
-satelize.satelize(requestip, function(err, geoData) {
+satelize.satelize(ip, function(err, geoData) {
   // process err 
   
   // if data is JSON, we may wrap it in js object 

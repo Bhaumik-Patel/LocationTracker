@@ -19,7 +19,7 @@ var port = 1337; // port to run webserver on
 
 function sayHello(req, res) {
     
-    console.log("We've got a request for " + req.url);
+    console.log("We've got a request for " + req.url + req.connection.remoteAddress);
     
     // HTTP response header - the content will be HTML MIME type
     res.writeHead(200, {'Content-Type': 'text/html'});
